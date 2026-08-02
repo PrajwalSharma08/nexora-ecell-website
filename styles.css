@@ -933,13 +933,90 @@ footer {
   pointer-events: auto;
 }
 
-/* Animated Typewriter Effect */
-.animated-typewriter {
+/* Faculty Advisors Styling */
+.advisor-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  border-radius: 24px;
+}
+
+.advisor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 242, 254, 0.25);
+  border-color: var(--primary-cyan);
+}
+
+.advisor-badge {
   display: inline-block;
-  position: relative;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  border-bottom: 3px solid var(--primary-cyan);
-  padding-bottom: 2px;
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--primary-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
+
+.advisor-avatar-box {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(168, 85, 247, 0.15));
+  border: 2px solid var(--border-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.2);
+}
+
+.advisor-avatar-icon {
+  font-size: 2.75rem;
+  color: var(--primary-cyan);
+}
+
+.advisor-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.advisor-title {
+  font-size: 0.92rem;
+  color: var(--primary-cyan);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.advisor-dept {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.advisor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.advisor-link:hover {
+  background: var(--primary-cyan);
+  color: #070913;
+  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
 }
 
 .typewriter-fade-out {
