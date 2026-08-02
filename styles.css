@@ -1134,6 +1134,235 @@ footer {
   color: var(--primary-cyan);
 }
 
+/* =============================
+   TABLET (max-width: 992px)
+============================= */
+@media (max-width: 992px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .timeline-container::before { left: 20px; }
+  .timeline-item, .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 3rem;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+    left: 10px;
+    right: auto;
+  }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .team-flip-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+}
+
+/* =============================
+   MOBILE (max-width: 768px)
+============================= */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(7, 9, 19, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-glow);
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+  .nav-links.active { display: flex; }
+  .mobile-toggle { display: block; }
+
+  /* Logo group: hide NEC ID badge on small screens */
+  .logo-badge { display: none; }
+
+  /* Hero Section */
+  #hero {
+    padding-top: 6rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .hero-banner-bg {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+    background-attachment: scroll;
+  }
+  .hero-title {
+    font-size: 1.75rem !important;
+    line-height: 1.3;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+  /* Hero logos - stack vertically on mobile */
+  .hero-logos {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .hero-logo-main {
+    max-width: 80px !important;
+  }
+  .hero-logo-banner {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Stats row */
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .stat-card { padding: 1rem 0.5rem; }
+  .stat-number { font-size: 1.75rem; }
+
+  /* Section padding */
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .section-title { font-size: 1.6rem; }
+  .section-desc { font-size: 0.88rem; }
+
+  /* Custom container */
+  .custom-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* About cards */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  /* Track cards */
+  .tracks-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Team filter buttons - scrollable row */
+  .team-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    gap: 0.4rem;
+    justify-content: flex-start;
+  }
+  .filter-btn {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  /* Team cards grid */
+  .team-flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .flip-card-container {
+    height: 220px !important;
+  }
+
+  /* Advisor cards */
+  .advisor-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .advisor-avatar-box {
+    width: 75px;
+    height: 75px;
+  }
+  .advisor-name { font-size: 1.1rem; }
+
+  /* Timeline */
+  .timeline-container::before { left: 16px; }
+  .timeline-item, .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+    left: 6px;
+    right: auto;
+  }
+
+  /* Prizes/Perks section */
+  .prizes-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* FAQ */
+  .faq-question { font-size: 0.92rem; }
+  .faq-answer { font-size: 0.85rem; }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* Modal form */
+  .modal-box {
+    padding: 1.5rem 1.25rem !important;
+    margin: 1rem !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-box h2 { font-size: 1.4rem !important; }
+  .form-group { margin-bottom: 0.85rem; }
+
+  /* Form grid: 1 column on mobile */
+  .modal-box div[style*="grid-template-columns: 1fr 1fr"] {
+    display: block !important;
+  }
+
+  /* Buttons */
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.88rem;
+  }
+  .hero-banner-bg div[style*="display: flex; gap: 1rem"] {
+    gap: 0.65rem !important;
+  }
+
+  /* Glow BGs - reduce size on mobile */
+  .glow-bg { filter: blur(80px); opacity: 0.2; }
+  .glow-1 { width: 250px; height: 250px; }
+  .glow-2 { width: 200px; height: 200px; }
+  .glow-3 { width: 200px; height: 200px; }
+
+  /* Timer */
+  .timer-container { padding: 1rem 1rem; gap: 0.75rem; }
+  .timer-val { font-size: 1.4rem; }
+  .timer-label { font-size: 0.65rem; }
+}
+
+/* =============================
+   SMALL MOBILE (max-width: 400px)
+============================= */
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.5rem !important; }
+  .team-flip-grid { grid-template-columns: repeat(2, 1fr); }
+  .flip-card-container { height: 200px !important; }
+  .hero-stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+
 @media (max-width: 992px) {
   .hero-title { font-size: 2.8rem; }
   .hero-stats-row { grid-template-columns: repeat(2, 1fr); }
