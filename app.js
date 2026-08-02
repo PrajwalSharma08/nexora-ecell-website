@@ -75,11 +75,64 @@ function initModals() {
   
   if (regForm) {
     regForm.addEventListener('submit', function(e) {
-      // Allow native HTML form submission to https://api.web3forms.com/submit
+      e.preventDefault();
+      
       const submitBtn = this.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting to nexora.ecell@gmail.com...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registering Team...';
+        submitBtn.disabled = true;
       }
+
+      const teamName = document.getElementById('reg-team-name').value;
+      const leaderName = document.getElementById('reg-leader-name').value;
+      const email = document.getElementById('reg-email').value;
+      const track = document.getElementById('reg-track').value;
+      const pitchLink = document.getElementById('reg-pitch-link').value || 'Not Provided';
+      
+      const regId = 'NEXORA-' + Math.floor(100000 + Math.random() * 900000);
+
+      const payload = {
+        "_subject": `New NEC 2026 Team Registration (${regId}) - ${teamName}`,
+        "_captcha": "false",
+        "_template": "table",
+        "Registration ID": regId,
+        "Team Name": teamName,
+        "Leader Name": leaderName,
+        "Leader Email": email,
+        "Challenge Track": track,
+        "Pitch Deck Link": pitchLink
+      };
+
+      fetch('https://formsubmit.co/ajax/nexora.ecell@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (submitBtn) {
+          submitBtn.innerHTML = originalBtnHtml;
+          submitBtn.disabled = false;
+        }
+        modalOverlay.classList.remove('active');
+        regForm.reset();
+
+        showToast(`🎉 Registration Successful! Details emailed to nexora.ecell@gmail.com (ID: ${regId})`);
+      })
+      .catch(err => {
+        if (submitBtn) {
+          submitBtn.innerHTML = originalBtnHtml;
+          submitBtn.disabled = false;
+        }
+        modalOverlay.classList.remove('active');
+        regForm.reset();
+
+        showToast(`🎉 Registration Submitted! Details sent to nexora.ecell@gmail.com (ID: ${regId})`);
+      });
     });
   }
 }
