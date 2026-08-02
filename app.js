@@ -389,10 +389,24 @@ function initSmoothScroll() {
 // Team Card Flip Toggle for Touch/Mobile Devices
 function initTeamCardFlip() {
   document.querySelectorAll('.flip-card-container').forEach(card => {
+    // Standard click / tap toggle
     card.addEventListener('click', function(e) {
       // If clicked on a social link inside back card, allow link navigation
       if (e.target.closest('.social-btn')) return;
-      this.classList.toggle('flipped');
+      
+      // Toggle flipped state
+      const isFlipped = this.classList.contains('flipped');
+      
+      // Close all other open flipped cards for clean UX
+      document.querySelectorAll('.flip-card-container.flipped').forEach(c => {
+        if (c !== card) c.classList.remove('flipped');
+      });
+
+      if (isFlipped) {
+        this.classList.remove('flipped');
+      } else {
+        this.classList.add('flipped');
+      }
     });
   });
 }
