@@ -7,7 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initSocialButtons();
   initTypewriter();
+  initMobileMenu();
 });
+
+// Mobile Navigation Toggle
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle-btn');
+  const navMenu = document.getElementById('nav-menu');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+}
 
 // Typewriter Dynamic Text Animation (UU Hack Diwas Style)
 function initTypewriter() {
