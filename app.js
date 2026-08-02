@@ -388,26 +388,23 @@ function initSmoothScroll() {
 
 // Team Card Flip Toggle for Touch/Mobile Devices
 function initTeamCardFlip() {
-  document.querySelectorAll('.flip-card-container').forEach(card => {
-    // Standard click / tap toggle
+  const cards = document.querySelectorAll('.flip-card-container');
+  cards.forEach(card => {
     card.addEventListener('click', function(e) {
-      // If clicked on a social link inside back card, allow link navigation
       if (e.target.closest('.social-btn')) return;
       
-      // Toggle flipped state
-      const isFlipped = this.classList.contains('flipped');
+      const wasFlipped = this.classList.contains('flipped');
       
-      // Close all other open flipped cards for clean UX
-      document.querySelectorAll('.flip-card-container.flipped').forEach(c => {
-        if (c !== card) c.classList.remove('flipped');
-      });
+      // Close all cards first
+      cards.forEach(c => c.classList.remove('flipped'));
 
-      if (isFlipped) {
-        this.classList.remove('flipped');
-      } else {
+      // If it wasn't flipped before, flip this card
+      if (!wasFlipped) {
         this.classList.add('flipped');
       }
+      // If it was already flipped, it will remain un-flipped (back to front photo)
     });
   });
 }
+
 
