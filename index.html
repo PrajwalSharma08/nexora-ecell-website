@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA E-Cell BBSCET | National Entrepreneurship Challenge 2026 (E-Cell IIT Bombay)</title>
+  <meta name="description" content="Official Portal of Team NEXORA from BBS College of Engineering & Technology for National Entrepreneurship Challenge (NEC 2026) by E-Cell IIT Bombay.">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+  
+  <!-- Glowing Background Orbs -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+  <div class="glow-bg glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar glass-nav">
+    <div class="custom-container nav-content">
+      <div class="logo-group" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="assets/nexora_logo.jpg" style="height: 42px; width: 42px; border-radius: 50%; border: 1px solid var(--border-glow); box-shadow: 0 0 12px rgba(0, 242, 254, 0.4); object-fit: cover;" alt="NEXORA Logo">
+        <div style="font-weight: 800; font-size: 1.3rem; font-family: 'Outfit', sans-serif; letter-spacing: -0.5px;">
+          NEXORA<span class="text-gradient">.ECell</span>
+        </div>
+        <div class="logo-badge">NEC2681151</div>
+        <div style="height: 24px; width: 1px; background: rgba(255,255,255,0.15); margin: 0 0.25rem;"></div>
+        <img src="assets/ecell_logo.jpg" style="height: 34px; object-fit: contain;" alt="E-Cell IIT Bombay Logo">
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#tracks" class="nav-link">Tracks</a></li>
+        <li><a href="#timeline" class="nav-link">Roadmap</a></li>
+        <li><a href="#team" class="nav-link">Our Team</a></li>
+        <li><a href="#prizes" class="nav-link">Perks</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+      
+      <div>
+        <a href="#" class="btn-primary open-reg-modal">
+          <i class="fa-solid fa-rocket"></i> Register Team
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section-padding custom-container" id="hero" style="padding-top: 8rem; padding-bottom: 2rem;">
+    <div class="hero-banner-bg text-center">
+      
+      <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+        <img src="assets/nexora_logo.jpg" style="max-width: 140px; width: 100%; border-radius: 50%; box-shadow: 0 0 25px rgba(0, 242, 254, 0.4); border: 2px solid var(--border-glow);" alt="NEXORA Official Logo">
+        <img src="assets/nec_banner.jpg" style="max-width: 380px; width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 242, 254, 0.35); border: 1px solid var(--border-glow);" alt="NEC 2026 Banner">
+      </div>
+
+      <div class="hero-badge-pill">
+        <i class="fa-solid fa-trophy"></i> E-Cell IIT Bombay — National Entrepreneurship Challenge 2026
+      </div>
+      
+      <h1 class="hero-title" style="font-size: 3.5rem;">
+        Where Ideas Become Impact<br>
+        <span class="text-gradient animated-typewriter" id="typewriter-text">Innovators</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Official Portal of Team <strong>NEXORA</strong> from <strong>BBS College of Engineering & Technology (BBSCET)</strong>. Fostering student entrepreneurship, pitch bootcamps & startup incubation under NEC 2026.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+        <a href="#" class="btn-primary open-reg-modal">
+          <i class="fa-solid fa-paper-plane"></i> Submit Pitch Deck
+        </a>
+        <a href="#tracks" class="btn-secondary">
+          <i class="fa-solid fa-compass"></i> Explore Tracks
+        </a>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="hero-stats-row" style="margin-top: 2.5rem;">
+        <div class="stat-card glass-panel">
+          <div class="stat-number text-gradient">7</div>
+          <div class="stat-label">Portfolios</div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-number text-gradient-purple">15</div>
+          <div class="stat-label">Team Members</div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-number text-gradient">7</div>
+          <div class="stat-label">Team Leads</div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-number text-gradient-gold">BBSCET</div>
+          <div class="stat-label">Campus Chapter</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding custom-container" id="about">
+    <div class="glass-panel" style="padding: 3.5rem; position: relative; overflow: hidden;">
+      <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+        <span class="section-tag">About Our Initiative</span>
+        <h2 class="section-title">Driven By Innovation & Entrepreneurship</h2>
+        <p class="section-desc">
+          Under the National Entrepreneurship Challenge (NEC) by <strong>E-Cell IIT Bombay</strong>, Team <strong>NEXORA</strong> at BBS College of Engineering & Technology acts as the catalyst for student startups, providing technical infrastructure, pitch bootcamps, and industry connections.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid var(--border-light);">
+          <i class="fa-solid fa-lightbulb" style="font-size: 2rem; color: var(--primary-cyan); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Ideation & Prototyping</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Converting raw ideas into structured business models and rapid tech MVPs.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid var(--border-light);">
+          <i class="fa-solid fa-people-group" style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Mentorship & Bootcamps</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Direct guidance from startup founders, IIT alumni, and industry leaders.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid var(--border-light);">
+          <i class="fa-solid fa-handshake" style="font-size: 2rem; color: var(--accent-amber); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Incubation & Funding</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Connecting top team projects with incubator channels and angel networks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Tracks Section -->
+  <section class="section-padding custom-container" id="tracks">
+    <div class="section-header">
+      <span class="section-tag">Competition Domains</span>
+      <h2 class="section-title">Challenge Tracks & Arenas</h2>
+      <p class="section-desc">Select your track and submit your solution for the NEC 2026 evaluation.</p>
+    </div>
+
+    <div class="tracks-grid">
+      <!-- Track 1 -->
+      <div class="track-card glass-panel">
+        <div class="track-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 class="track-title">Software & AI MVP Track</h3>
+        <p class="track-desc">Build web apps, AI tools, SaaS platforms, or mobile solutions solving real-world consumer & enterprise challenges.</p>
+        <div class="track-tags">
+          <span class="tag-badge">AI / ML</span>
+          <span class="tag-badge">SaaS</span>
+          <span class="tag-badge">Web3 / FinTech</span>
+        </div>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track-card glass-panel">
+        <div class="track-icon" style="background: rgba(168, 85, 247, 0.1); color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.2);">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3 class="track-title">Business Plan & B-Model</h3>
+        <p class="track-desc">Present high-potential business models, go-to-market strategies, unit economics, and scalability roadmaps.</p>
+        <div class="track-tags">
+          <span class="tag-badge">B-Plan</span>
+          <span class="tag-badge">GTM Strategy</span>
+          <span class="tag-badge">Market Analysis</span>
+        </div>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="track-card glass-panel">
+        <div class="track-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.2);">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h3 class="track-title">Social Entrepreneurship</h3>
+        <p class="track-desc">Tech & business solutions focused on sustainability, clean energy, education, agritech, and community development.</p>
+        <div class="track-tags">
+          <span class="tag-badge">AgriTech</span>
+          <span class="tag-badge">CleanTech</span>
+          <span class="tag-badge">EdTech</span>
+        </div>
+      </div>
+
+      <!-- Track 4 -->
+      <div class="track-card glass-panel">
+        <div class="track-icon" style="background: rgba(236, 72, 153, 0.1); color: var(--accent-pink); border-color: rgba(236, 72, 153, 0.2);">
+          <i class="fa-solid fa-puzzle-piece"></i>
+        </div>
+        <h3 class="track-title">Startup Case Study Track</h3>
+        <p class="track-desc">Analyze real startup failure/success cases, formulate turnaround strategies, and solve complex business problems.</p>
+        <div class="track-tags">
+          <span class="tag-badge">Case Analysis</span>
+          <span class="tag-badge">Frameworks</span>
+          <span class="tag-badge">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Roadmap Timeline -->
+  <section class="section-padding custom-container" id="timeline">
+    <div class="section-header">
+      <span class="section-tag">Execution Roadmap</span>
+      <h2 class="section-title">NEC 2026 Journey Timeline</h2>
+      <p class="section-desc">Key milestones for Team NEXORA and participating campus teams.</p>
+    </div>
+
+    <div class="timeline-container">
+      <!-- Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-panel">
+          <div class="timeline-date"><i class="fa-regular fa-calendar"></i> August 2026 • COMPLETED</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Team NEXORA Structure & Role Allocation</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Formed 7 core portfolios (15 members, 7 leads) for NEC 2026 submission report for E-Cell IIT Bombay.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 15px var(--accent-purple);"></div>
+        <div class="timeline-content glass-panel">
+          <div class="timeline-date" style="color: var(--accent-purple);"><i class="fa-regular fa-calendar"></i> Active Phase</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Portal Launch & Pitch Deck Submissions</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Launch of official web portal and collecting initial startup pitch decks & team registrations.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-panel">
+          <div class="timeline-date"><i class="fa-regular fa-calendar"></i> Upcoming</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Mentorship & Bootcamps</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Guest sessions with industry experts, pitch deck refining, and MVP technical reviews.</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="timeline-item">
+        <div class="timeline-dot" style="border-color: var(--accent-amber); box-shadow: 0 0 15px var(--accent-amber);"></div>
+        <div class="timeline-content glass-panel">
+          <div class="timeline-date" style="color: var(--accent-amber);"><i class="fa-regular fa-calendar"></i> Grand Finale</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">National Pitching at E-Cell IIT Bombay</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Final presentation of NEXORA initiatives and shortlisted campus startups before the national jury.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team NEXORA Portfolio Showcase -->
+  <section class="section-padding custom-container" id="team">
+    <div class="section-header">
+      <span class="section-tag">Leadership & Execution</span>
+      <h2 class="section-title">Team NEXORA Structure</h2>
+      <p class="section-desc">BBS College of Engineering & Technology — 7 Portfolios | 7 Team Leads | 15 Members</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="team-filter">
+      <button class="filter-btn active" data-filter="all">All Portfolios</button>
+      <button class="filter-btn" data-filter="core">Core Leadership</button>
+      <button class="filter-btn" data-filter="tech">Web & Tech</button>
+      <button class="filter-btn" data-filter="pr">PR & Outreach</button>
+      <button class="filter-btn" data-filter="content">Content & Social</button>
+      <button class="filter-btn" data-filter="design">Design & Creative</button>
+      <button class="filter-btn" data-filter="strategy">Strategy & Research</button>
+      <button class="filter-btn" data-filter="logistics">Logistics & Ops</button>
+    </div>
+
+    <div class="team-flip-grid">
+
+      <!-- Member 1: Prajwal Sharma -->
+      <div class="flip-card-container team-card" data-category="tech">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1ynlkdMM5jQH1OPKIBwF4JbR2lpnU0m7X&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Prajwal Sharma</h3>
+          <p class="back-role">Tech & Web Lead</p>
+          <a href="https://www.linkedin.com/in/prajwal-sharma-015b98296" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/ps_artist_661" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 2: Ayush Tripathi -->
+      <div class="flip-card-container team-card" data-category="tech">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=16Pl5cNR1vGAa7-hXNPUYIKvIGq24FMm5&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Ayush Tripathi</h3>
+          <p class="back-role">Web Design Team</p>
+          <a href="https://www.linkedin.com/in/prajwal-sharma-015b98296" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/at.3.7.2007" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 3: Mukesh Kumar -->
+      <div class="flip-card-container team-card" data-category="core">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1ZnVxY5qi_BYORDnWXM6UYWX482inyrYm&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Mukesh Kumar</h3>
+          <p class="back-role">Team Head / Overall Lead</p>
+          <a href="https://www.linkedin.com/in/themukeshdev" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/themukeshdev" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 4: Deepa Tiwari -->
+      <div class="flip-card-container team-card" data-category="core">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1PDl-oswAfrdU5GESrwsoHzKk2UzFmk1c&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Deepa Tiwari</h3>
+          <p class="back-role">Vice Lead</p>
+          <a href="https://www.linkedin.com/in/deepa-tiwari-1565753a3" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/deeptiwariiii" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 5: Shubhansi Mishra -->
+      <div class="flip-card-container team-card" data-category="design">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1zmIkW-C6b0c7soveAlbOhJJbQHjmwSVc&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shubhansi Mishra</h3>
+          <p class="back-role">Design Lead</p>
+          <a href="https://www.linkedin.com/in/shubhansi-mishra-b7b36a3b6" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/Shubhansi.x06" target="_blank" class="social-btn instagram">
+              <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 6: Alok Kumar Patel -->
+      <div class="flip-card-container team-card" data-category="design">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=13KKxp0bwqsSDvSRHm-z3DjHuh2dwVrl-&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Alok Kumar Patel</h3>
+          <p class="back-role">Graphic Designer</p>
+          <a href="https://www.linkedin.com/in/alok-patel-028532301" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/alok__9928" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 7: Shrikrishna Tiwari -->
+      <div class="flip-card-container team-card" data-category="design">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1w5n1kGUXFL_-MXk7iaaSFq4b29rDhv0J&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shrikrishna Tiwari</h3>
+          <p class="back-role">Media Designer</p>
+          <a href="https://www.linkedin.com/in/shubhansi-mishra-b7b36a3b6" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/Mr__shrikrishna.tiwari_123_" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 8: Ayush Dwivedi -->
+      <div class="flip-card-container team-card" data-category="pr">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1ewzusMl6kKif-9cFcnw_p8x96LD5l9IM&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Ayush Dwivedi</h3>
+          <p class="back-role">PR Lead</p>
+          <a href="https://www.linkedin.com/in/ayush-dwivedi-496b96357" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/i.ayu5hdwivedi" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 9: Piyush Yadav -->
+      <div class="flip-card-container team-card" data-category="pr">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1aAkcYayb3WrRVZNS03AS9TntgrnNDwry&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Piyush Yadav</h3>
+          <p class="back-role">Outreach Executive</p>
+          <a href="https://www.linkedin.com/in/piyush-yadav-b425a2342" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/piyushydv.v" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 10: Shobhit Sonkar -->
+      <div class="flip-card-container team-card" data-category="content">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1jdgsZZ9m6RBM3YUCVsdK7uJQ655lczZv&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shobhit Sonkar</h3>
+          <p class="back-role">Content Lead</p>
+          <a href="https://www.linkedin.com/in/shobhit-sonkar-97445541b" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/shobhit_gamer" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 11: Shivam Mishra -->
+      <div class="flip-card-container team-card" data-category="content">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=15lHzj9knmTiPLcg4Lfo0jabwVhn5UFdQ&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shivam Mishra</h3>
+          <p class="back-role">Social Media Lead</p>
+          <a href="https://www.linkedin.com/in/shivam-mishra-30-04-2007sm" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/shivammishra0804" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 12: Aryaman -->
+      <div class="flip-card-container team-card" data-category="content">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1tRwiFlrPRJ73_jaJnjv27V4_wQuxKBI5&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Aryaman</h3>
+          <p class="back-role">Media Production</p>
+          <a href="https://www.linkedin.com/in/aryaman-patel-tech" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/aryan_patelxyz" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 13: Prateek Vaishy -->
+      <div class="flip-card-container team-card" data-category="strategy">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1fsFuE4pFXlySsDedyFo6COb1aQdqqoq2&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Prateek Vaishy</h3>
+          <p class="back-role">Strategy Lead</p>
+          <a href="https://www.linkedin.com/in/shweta-tiwari448" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/mr.prateek_008" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 14: Shweta Tiwari -->
+      <div class="flip-card-container team-card" data-category="strategy">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=13dMoSZjuuxd2D6frqKefkqeg5kI3tdqq&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shweta Tiwari</h3>
+          <p class="back-role">Research Analyst</p>
+          <a href="https://www.linkedin.com/in/shweta-tiwari448" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/shwetatiwari_5" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 15: Anjali Tiwari -->
+      <div class="flip-card-container team-card" data-category="logistics">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=16b02sqpl5msE0GDeFZnCtM1vjvgpyZt0&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Anjali Tiwari</h3>
+          <p class="back-role">Operations Lead</p>
+          <a href="https://www.linkedin.com/in/anjali-tiwari-48b57338b" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/anjali_tiwari.27" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Member 16: Shashwat Mishra -->
+      <div class="flip-card-container team-card" data-category="logistics">
+        <div class="flip-card-front" style="background-image: url('https://drive.google.com/thumbnail?id=1BY-HNHn7-TRgG-5UVSSZxf_oKmCg35mi&sz=w800');"></div>
+        <div class="flip-card-back">
+          <h3 class="back-name">Shashwat Mishra</h3>
+          <p class="back-role">Logistics Executive</p>
+          <a href="https://www.linkedin.com/in/ShashwatBytes" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/shashwat_734" target="_blank" class="social-btn instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+  </section>
+
+  <!-- Perks & Rewards Banner -->
+  <section class="section-padding custom-container" id="prizes">
+    <div class="glass-panel" style="padding: 4rem 2rem; text-align: center; border-color: rgba(0, 242, 254, 0.4);">
+      <span class="section-tag">Incubation & Recognition</span>
+      <h2 class="section-title">Perks & Rewards For Participants</h2>
+      <p class="section-desc" style="max-width: 650px; margin: 0 auto 3rem;">
+        Top teams from BBSCET & regional rounds get direct exposure to national investors and mentors.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: rgba(0, 242, 254, 0.05); border-radius: 16px; border: 1px solid rgba(0, 242, 254, 0.2);">
+          <i class="fa-solid fa-award" style="font-size: 2.5rem; color: var(--primary-cyan); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">IIT Bombay Certificates</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Official recognition certificates by E-Cell IIT Bombay.</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: rgba(168, 85, 247, 0.05); border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.2);">
+          <i class="fa-solid fa-building-columns" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Incubation Support</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Free incubation desk space & legal mentor consultation.</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: rgba(245, 158, 11, 0.05); border-radius: 16px; border: 1px solid rgba(245, 158, 11, 0.2);">
+          <i class="fa-solid fa-sack-dollar" style="font-size: 2.5rem; color: var(--accent-amber); margin-bottom: 1rem;"></i>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Investor Pitching</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Direct presentation opportunities to angel funds and VCs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding custom-container" id="faq">
+    <div class="section-header">
+      <span class="section-tag">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Everything you need to know about Team NEXORA and NEC 2026.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item glass-panel">
+        <div class="faq-question">
+          <span>What is Team NEXORA & NEC 2026?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          NEXORA is the official team representing BBS College of Engineering & Technology (BBSCET) in the National Entrepreneurship Challenge (NEC 2026) organized by E-Cell IIT Bombay.
+        </div>
+      </div>
+
+      <div class="faq-item glass-panel">
+        <div class="faq-question">
+          <span>Who can participate in the challenge tracks?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          All engineering, management, and diploma students from BBSCET and affiliated colleges can register teams (2 to 4 members) in any of the challenge tracks.
+        </div>
+      </div>
+
+      <div class="faq-item glass-panel">
+        <div class="faq-question">
+          <span>What format is required for Pitch Deck submissions?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          Submissions should be in PDF format (maximum 8-10 slides) covering Problem Statement, Solution/MVP, Market Size, Revenue Model, and Team Overview.
+        </div>
+      </div>
+
+      <div class="faq-item glass-panel">
+        <div class="faq-question">
+          <span>Who manages the technical portal & platform?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          The platform is designed & managed by Prajwal Sharma (Tech & Web Lead) and Ayush Tripathi (Web Design Team) under Team NEXORA.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Modal Overlay -->
+  <div class="modal-overlay" id="reg-modal">
+    <div class="modal-box glass-panel">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="section-tag">NEC 2026 Participation</span>
+        <h2 style="font-size: 1.75rem; margin-top: 0.25rem;" class="text-gradient">Register Your Startup Team</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          All submitted details will be directly emailed to <strong>nexora.ecell@gmail.com</strong>
+        </p>
+      </div>
+
+      <form id="nec-reg-form" action="https://formsubmit.co/nexora.ecell@gmail.com" method="POST">
+        <input type="hidden" name="_to" value="nexora.ecell@gmail.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New NEC 2026 Startup Team Registration - Team NEXORA">
+
+        <div class="form-group">
+          <label class="form-label" for="reg-team-name">Team / Startup Name</label>
+          <input type="text" id="reg-team-name" name="Team Name" class="form-input" placeholder="e.g. InnovateX Tech" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="reg-leader-name">Team Leader Name</label>
+            <input type="text" id="reg-leader-name" name="Leader Name" class="form-input" placeholder="e.g. Prajwal Sharma" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Leader Email Address</label>
+            <input type="email" id="reg-email" name="Leader Email" class="form-input" placeholder="e.g. leader@gmail.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-track">Select Challenge Track</label>
+          <select id="reg-track" name="Challenge Track" class="form-input" style="background: rgba(15, 23, 42, 0.9); color: var(--text-main);" required>
+            <option value="Software & AI MVP Track">Software & AI MVP Track</option>
+            <option value="Business Plan & B-Model">Business Plan & B-Model</option>
+            <option value="Social Entrepreneurship">Social Entrepreneurship</option>
+            <option value="Startup Case Study Track">Startup Case Study Track</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-pitch-link">Pitch Deck / MVP Prototype Link (Optional)</label>
+          <input type="url" id="reg-pitch-link" name="Pitch Deck Link" class="form-input" placeholder="https://drive.google.com/... (Optional)">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <i class="fa-solid fa-paper-plane"></i> Submit Registration to nexora.ecell@gmail.com
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container">
+    <div class="toast" id="toast-notification">
+      <i class="fa-solid fa-circle-check" style="color: var(--primary-cyan); font-size: 1.2rem;"></i>
+      <span id="toast-msg">Registration Successful!</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="custom-container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="assets/nexora_logo.jpg" style="height: 38px; width: 38px; border-radius: 50%; border: 1px solid var(--border-glow);" alt="NEXORA Logo">
+            <div style="font-weight: 800; font-size: 1.4rem; font-family: 'Outfit', sans-serif;">
+              NEXORA<span class="text-gradient">.ECell</span>
+            </div>
+          </div>
+          <p style="color: var(--primary-cyan); font-size: 0.82rem; font-weight: 600; margin-bottom: 0.5rem;">
+            "Where Ideas Become Impact"
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; margin-bottom: 1.5rem;">
+            Official Entrepreneurship Cell Initiative • BBS College of Engineering & Technology, Prayagraj. Representing in NEC 2026 (E-Cell IIT Bombay).
+          </p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" style="color: var(--text-muted); font-size: 1.2rem;"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About NEXORA</a></li>
+            <li><a href="#tracks">Challenge Tracks</a></li>
+            <li><a href="#timeline">NEC Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Team NEXORA</h4>
+          <ul class="footer-links">
+            <li><a href="#team">Core Leadership</a></li>
+            <li><a href="#team">Web & Tech Lead</a></li>
+            <li><a href="#team">Design & Media</a></li>
+            <li><a href="#team">PR & Operations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Venue</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
+            <strong>BBS College of Engineering & Technology</strong><br>
+            Phaphamau, Prayagraj, UP<br>
+            NEC ID: <strong>NEC2681151</strong><br>
+            Email: ecell@bbscet.ac.in
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Team NEXORA (E-Cell BBSCET). Built with ❤️ by Prajwal Sharma (Tech & Web Lead).</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
