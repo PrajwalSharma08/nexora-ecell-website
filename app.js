@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSocialButtons();
   initTypewriter();
   initMobileMenu();
+  initTeamCardFlip();
 });
 
 // Mobile Navigation Toggle
@@ -384,3 +385,15 @@ function initSmoothScroll() {
     });
   });
 }
+
+// Team Card Flip Toggle for Touch/Mobile Devices
+function initTeamCardFlip() {
+  document.querySelectorAll('.flip-card-container').forEach(card => {
+    card.addEventListener('click', function(e) {
+      // If clicked on a social link inside back card, allow link navigation
+      if (e.target.closest('.social-btn')) return;
+      this.classList.toggle('flipped');
+    });
+  });
+}
+
