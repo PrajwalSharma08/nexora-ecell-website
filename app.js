@@ -80,7 +80,7 @@ function initModals() {
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatching Email...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
         submitBtn.disabled = true;
       }
 
@@ -93,9 +93,9 @@ function initModals() {
       const regId = 'NEXORA-' + Math.floor(100000 + Math.random() * 900000);
 
       const payload = {
-        "_subject": `New NEC 2026 Team Registration (${regId}) - ${teamName}`,
-        "_captcha": "false",
-        "_template": "table",
+        "access_key": "f8c3b8de-312c-4eb5-b514-002dff71116e",
+        "subject": `New NEC 2026 Team Registration (${regId}) - ${teamName}`,
+        "from_name": "Team NEXORA E-Cell Portal",
         "Registration ID": regId,
         "Team Name": teamName,
         "Leader Name": leaderName,
@@ -104,7 +104,7 @@ function initModals() {
         "Pitch Deck Link": pitchLink
       };
 
-      fetch('https://formsubmit.co/ajax/nexora.ecell@gmail.com', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -121,11 +121,7 @@ function initModals() {
         modalOverlay.classList.remove('active');
         regForm.reset();
 
-        if (data.message && data.message.includes('Activation')) {
-          showToast(`📩 Check nexora.ecell@gmail.com inbox & click "Activate Form" link once!`);
-        } else {
-          showToast(`🎉 Registration details emailed to nexora.ecell@gmail.com! (ID: ${regId})`);
-        }
+        showToast(`🎉 Registration details emailed to nexora.ecell@gmail.com! (ID: ${regId})`);
       })
       .catch(err => {
         if (submitBtn) {
@@ -135,7 +131,7 @@ function initModals() {
         modalOverlay.classList.remove('active');
         regForm.reset();
 
-        showToast(`🎉 Registration details dispatched to nexora.ecell@gmail.com! (ID: ${regId})`);
+        showToast(`🎉 Registration details submitted! (ID: ${regId})`);
       });
     });
   }
