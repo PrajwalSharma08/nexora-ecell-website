@@ -1178,20 +1178,22 @@ footer {
     border-bottom: 1px solid rgba(0, 242, 254, 0.25) !important;
   }
   .nav-content {
-    padding: 0 0.75rem !important;
+    padding: 0 0.5rem !important;
+    gap: 0.25rem !important;
   }
   .logo-group {
-    gap: 0.4rem !important;
+    gap: 0.35rem !important;
   }
   .logo-group img:first-child {
-    height: 32px !important;
-    width: 32px !important;
+    height: 28px !important;
+    width: 28px !important;
   }
   .logo-group div:nth-child(2) {
-    font-size: 1rem !important;
+    font-size: 0.88rem !important;
+    letter-spacing: -0.5px !important;
   }
   .logo-group img:last-child {
-    height: 26px !important;
+    height: 20px !important;
   }
   .logo-group div[style*="width: 1px"] {
     display: none !important;
@@ -1200,13 +1202,14 @@ footer {
 
   /* Register Team button on header on mobile */
   .nav-content .btn-primary {
-    padding: 0.45rem 0.75rem !important;
-    font-size: 0.75rem !important;
-    border-radius: 8px !important;
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.7rem !important;
+    border-radius: 6px !important;
     white-space: nowrap !important;
+    gap: 0.3rem !important;
   }
   .nav-content .btn-primary i {
-    font-size: 0.75rem !important;
+    font-size: 0.65rem !important;
   }
 
   .nav-links {
@@ -1462,5 +1465,19 @@ footer {
   .hero-title { font-size: 2.2rem; }
   .timer-container { padding: 1rem 1.5rem; gap: 1rem; }
   .timer-val { font-size: 1.6rem; }
+}
+
+@media (max-width: 420px) {
+  .logo-group img:last-child {
+    display: none !important;
+  }
+  .logo-group div:nth-child(2) {
+    font-size: 0.82rem !important;
+  }
+  .nav-content .btn-primary {
+    padding: 0.35rem 0.45rem !important;
+    font-size: 0.68rem !important;
+  }
+}
   .footer-grid { grid-template-columns: 1fr; }
 }
