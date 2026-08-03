@@ -204,6 +204,40 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.75rem;
 }
 
+.nav-logo-nexora {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+  object-fit: cover;
+}
+
+.nav-brand-title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.nav-divider {
+  height: 24px;
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 0.25rem;
+}
+
+.nav-logo-iitb {
+  height: 34px;
+  object-fit: contain;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
 .logo-badge {
   background: rgba(0, 242, 254, 0.1);
   border: 1px solid rgba(0, 242, 254, 0.3);
@@ -1179,37 +1213,46 @@ footer {
   }
   .nav-content {
     padding: 0 0.5rem !important;
-    gap: 0.25rem !important;
+    gap: 0.2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .logo-group {
-    gap: 0.35rem !important;
+    gap: 0.3rem !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
   }
-  .logo-group img:first-child {
-    height: 28px !important;
-    width: 28px !important;
+  .nav-logo-nexora {
+    height: 26px !important;
+    width: 26px !important;
+    flex-shrink: 0 !important;
   }
-  .logo-group div:nth-child(2) {
-    font-size: 0.88rem !important;
+  .nav-brand-title {
+    font-size: 0.82rem !important;
     letter-spacing: -0.5px !important;
+    white-space: nowrap !important;
   }
-  .logo-group img:last-child {
-    height: 20px !important;
+  .nav-logo-iitb {
+    height: 18px !important;
+    flex-shrink: 0 !important;
   }
-  .logo-group div[style*="width: 1px"] {
+  .nav-divider, .logo-badge {
     display: none !important;
   }
-  .logo-badge { display: none !important; }
 
-  /* Register Team button on header on mobile */
-  .nav-content .btn-primary {
-    padding: 0.35rem 0.55rem !important;
-    font-size: 0.7rem !important;
+  .nav-actions {
+    gap: 0.3rem !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-reg-btn {
+    padding: 0.32rem 0.5rem !important;
+    font-size: 0.68rem !important;
     border-radius: 6px !important;
     white-space: nowrap !important;
-    gap: 0.3rem !important;
+    gap: 0.25rem !important;
   }
-  .nav-content .btn-primary i {
-    font-size: 0.65rem !important;
+  .nav-reg-btn i {
+    font-size: 0.62rem !important;
   }
 
   .nav-links {
