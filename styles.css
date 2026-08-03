@@ -220,16 +220,32 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.5px;
 }
 
-.nav-divider {
-  height: 24px;
-  width: 1px;
-  background: rgba(255,255,255,0.15);
-  margin: 0 0.25rem;
+.nav-iitb-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  padding: 0.2rem 0.6rem 0.2rem 0.3rem;
+  border-radius: 20px;
+  margin-left: 0.25rem;
 }
 
-.nav-logo-iitb {
-  height: 34px;
+.nav-iitb-badge img {
+  height: 22px;
+  width: 22px;
+  border-radius: 4px;
   object-fit: contain;
+  background: #fff;
+  padding: 2px;
+}
+
+.nav-iitb-badge span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--primary-cyan);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav-actions {
@@ -1218,19 +1234,31 @@ footer {
     max-width: 100% !important;
   }
   .logo-group {
-    gap: 0.5rem !important;
+    gap: 0.35rem !important;
     flex-shrink: 1 !important;
     min-width: 0 !important;
   }
   .nav-logo-nexora {
-    height: 34px !important;
-    width: 34px !important;
+    height: 28px !important;
+    width: 28px !important;
     flex-shrink: 0 !important;
   }
   .nav-brand-title {
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
     letter-spacing: -0.5px !important;
     white-space: nowrap !important;
+  }
+  .nav-iitb-badge {
+    padding: 0.15rem 0.4rem 0.15rem 0.2rem !important;
+    gap: 0.25rem !important;
+    border-radius: 12px !important;
+  }
+  .nav-iitb-badge img {
+    height: 16px !important;
+    width: 16px !important;
+  }
+  .nav-iitb-badge span {
+    font-size: 0.55rem !important;
   }
 
   .nav-actions {
