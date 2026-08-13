@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initMobileMenu();
   initTeamCardFlip();
+  initLaunchpadCountdown();
 });
 
 // Mobile Navigation Toggle
@@ -405,6 +406,54 @@ function initTeamCardFlip() {
       // If it was already flipped, it will remain un-flipped (back to front photo)
     });
   });
+}
+
+// Launchpad Event Countdown Timer
+function initLaunchpadCountdown() {
+  const countdownEl = document.getElementById('launchpad-countdown');
+  const timerTextEl = document.getElementById('launchpad-timer-text');
+  const registerBtn = document.getElementById('launchpad-register-btn');
+  const registerText = document.getElementById('launchpad-register-text');
+
+  if (!countdownEl) return;
+
+  // Target Date: August 20, 2026, 23:59:59
+  const targetDate = new Date('2026-08-20T23:59:59').getTime();
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      countdownEl.textContent = "00d 00h 00m 00s";
+      if (timerTextEl) timerTextEl.innerHTML = '<i class="fa-solid fa-clock"></i> Registration Closed';
+      if (timerTextEl) timerTextEl.style.color = '#ef4444'; // Red color when closed
+      if (timerTextEl && timerTextEl.parentElement) timerTextEl.parentElement.style.borderColor = '#ef4444';
+      if (timerTextEl && timerTextEl.parentElement) timerTextEl.parentElement.style.background = 'rgba(239, 68, 68, 0.15)';
+      
+      if (registerBtn) {
+        registerBtn.removeAttribute('href');
+        registerBtn.style.background = '#4b5563'; // Gray out
+        registerBtn.style.cursor = 'not-allowed';
+        registerBtn.style.boxShadow = 'none';
+        registerBtn.onclick = function(e) { e.preventDefault(); };
+      }
+      if (registerText) {
+        registerText.textContent = "Registration Closed";
+      }
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
 }
 
 
